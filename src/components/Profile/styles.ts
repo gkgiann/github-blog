@@ -48,6 +48,7 @@ export const ProfileContainer = styled.div`
 
   p {
     margin-top: 0.8rem;
+    line-height: 2.56rem;
   }
 
   footer {
