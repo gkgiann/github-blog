@@ -7,10 +7,8 @@ export const ProfileContainer = styled.div`
 
   background: ${(p) => p.theme["base-profile"]};
 
-  max-width: 864px;
-
   padding: 3.2rem 4rem;
-  margin: -8rem auto 0;
+  margin-top: -8rem;
 
   border-radius: 10px;
 
