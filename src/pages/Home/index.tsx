@@ -1,5 +1,11 @@
+import { PostCard } from "../../components/PostCard";
 import { Profile } from "../../components/Profile";
-import { FormContainer, HomeContainer, InputContainer } from "./styles";
+import {
+  FormContainer,
+  HomeContainer,
+  InputContainer,
+  PostCardsContainer,
+} from "./styles";
 
 export function Home() {
   return (
@@ -17,6 +23,14 @@ export function Home() {
           <button type="submit">Buscar</button>
         </InputContainer>
       </FormContainer>
+
+      <PostCardsContainer>
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+      </PostCardsContainer>
     </HomeContainer>
   );
 }

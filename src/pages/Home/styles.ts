@@ -59,3 +59,12 @@ export const InputContainer = styled.div`
     }
   }
 `;
+
+export const PostCardsContainer = styled.div`
+  margin: 4.8rem 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+`;
