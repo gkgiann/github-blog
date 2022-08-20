@@ -1,32 +1,19 @@
 import styled from "styled-components";
 
-export const ProfileContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 3.2rem;
+export const PostContainer = styled.div`
+  max-width: 864px;
+  margin: auto;
+`;
 
-  background: ${(p) => p.theme["base-profile"]};
-
+export const PostInfoContainer = styled.div`
   padding: 3.2rem;
-  margin-top: -8rem;
-
+  background: ${(p) => p.theme["base-profile"]};
+  margin-top: -7rem;
   border-radius: 10px;
-
-  img {
-    width: 14.8rem;
-    height: 14.8rem;
-    border-radius: 8px;
-  }
 
   header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-
-    strong {
-      color: ${(p) => p.theme["base-title"]};
-      font-size: 2.4rem;
-    }
 
     a {
       display: flex;
@@ -40,32 +27,33 @@ export const ProfileContainer = styled.div`
       padding-bottom: 0.1rem;
       border-bottom: 1px solid transparent;
 
+      &:first-child {
+        border: none;
+      }
+
       &:hover {
         border-bottom-color: ${(p) => p.theme.blue};
       }
     }
   }
 
-  p {
-    margin-top: 0.8rem;
-    line-height: 2.56rem;
+  h1 {
+    margin-top: 2rem;
+    color: ${(p) => p.theme["base-title"]};
+    font-size: 2.4rem;
   }
 
   footer {
     display: flex;
     gap: 2.4rem;
-    margin-top: 2.4rem;
+    margin-top: 0.8rem;
 
     span {
       display: flex;
       align-items: center;
       gap: 0.8rem;
-
-      color: ${(p) => p.theme["base-subtitle"]};
-
-      svg {
-        color: ${(p) => p.theme["base-label"]};
-      }
+      line-height: 2.56rem;
+      color: ${(p) => p.theme["base-span"]};
     }
   }
 `;
