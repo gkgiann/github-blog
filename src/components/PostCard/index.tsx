@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { PostCardContainer } from "./styles";
 
-export function PostCard() {
+interface PostCardProps {
+  title: string;
+  number: string;
+  updated_at: string;
+  body: string;
+}
+
+export function PostCard({ title, number, updated_at, body }: PostCardProps) {
   return (
     <Link to="/post" style={{ textDecoration: "none" }}>
       <PostCardContainer>
         <header>
-          <h1>JavaScript data types and data structures</h1>
+          <h1>{title}</h1>
           <span>Há 1 dia</span>
         </header>
         <p>

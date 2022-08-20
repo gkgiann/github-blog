@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { PostCard } from "../../components/PostCard";
 import { Profile } from "../../components/Profile";
+import { api } from "../../lib/axios";
 import {
   FormContainer,
   HomeContainer,
@@ -7,7 +9,30 @@ import {
   PostCardsContainer,
 } from "./styles";
 
+interface Post {
+  title: string;
+  number: string;
+  updated_at: string;
+  body: string;
+}
+
 export function Home() {
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  async function getPosts() {
+    const res = await api.get("/search/issues", {
+      params: {
+        q: "repo:gian-lucas/github-blog",
+      },
+    });
+
+    setPosts(res.data.items);
+  }
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
     <HomeContainer>
       <Profile />
@@ -25,11 +50,9 @@ export function Home() {
       </FormContainer>
 
       <PostCardsContainer>
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
+        {posts.map((post) => {
+          return <PostCard key={post.number} {...post} />;
+        })}
       </PostCardsContainer>
     </HomeContainer>
   );

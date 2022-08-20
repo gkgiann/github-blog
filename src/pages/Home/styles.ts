@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   max-width: 864px;
+  padding: 0 2.4rem;
   margin: auto;
 `;
 export const FormContainer = styled.form`
