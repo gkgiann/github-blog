@@ -57,3 +57,33 @@ export const PostInfoContainer = styled.div`
     }
   }
 `;
+
+export const ContentContainer = styled.div`
+  padding: 4rem 3.2rem;
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 1.6rem;
+  }
+
+  h1,
+  h2,
+  h3:not(:first-child) {
+    margin-top: 2.4rem;
+  }
+
+  p {
+    line-height: 2.56rem;
+    text-align: justify;
+  }
+
+  li {
+    margin: 1.2rem 0;
+  }
+
+  img {
+    margin: 1.6rem 0;
+    max-width: 100%;
+  }
+`;

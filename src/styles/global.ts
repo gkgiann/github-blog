@@ -20,4 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     body, input, textarea, button {
         font: 400 1.6rem Munito, sans-serif;
     } 
+    a {
+        color: ${(p) => p.theme.blue};
+    }
 `;
