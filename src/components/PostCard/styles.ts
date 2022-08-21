@@ -43,6 +43,7 @@ export const ContentContainer = styled.div`
   * {
     font-size: 1.6rem;
     font-weight: 400;
+    line-height: 2.56rem;
   }
 
   display: -webkit-box;

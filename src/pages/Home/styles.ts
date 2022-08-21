@@ -46,6 +46,7 @@ export const InputContainer = styled.div`
   }
 
   button {
+    position: relative;
     cursor: pointer;
     border: 1px solid ${(p) => p.theme["base-border"]};
     color: ${(p) => p.theme["base-text"]};
@@ -55,8 +56,33 @@ export const InputContainer = styled.div`
 
     transition: 0.2s;
 
-    &:hover {
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
       background: ${(p) => p.theme["base-input"]};
+    }
+  }
+`;
+
+export const Loader = styled.div`
+  margin: 2.4rem auto;
+  border: 1px solid transparent;
+  border-top: 1px solid ${(p) => p.theme["base-text"]};
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  color: transparent;
+  animation: spin 0.7s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 `;
