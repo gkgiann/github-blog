@@ -86,7 +86,8 @@ export function Post() {
           </span>
           <span>
             <FaComment size={18} />
-            {post.comments} comentários
+            {post.comments}
+            {post.comments === 1 ? " comentário" : " comentários"}
           </span>
         </footer>
       </PostInfoContainer>
