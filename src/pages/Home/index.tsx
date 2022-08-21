@@ -23,6 +23,7 @@ export function Home() {
     const res = await api.get("/search/issues", {
       params: {
         q: "repo:gian-lucas/github-blog",
+        sort: "updated",
       },
     });
 
