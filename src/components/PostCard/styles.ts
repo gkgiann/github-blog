@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const PostCardContainer = styled.div`
-  max-width: 416px;
+  width: 41.6rem;
+  height: 26rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;

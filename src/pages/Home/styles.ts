@@ -64,8 +64,7 @@ export const InputContainer = styled.div`
 export const PostCardsContainer = styled.div`
   margin: 4.8rem 0;
 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem;
 `;
