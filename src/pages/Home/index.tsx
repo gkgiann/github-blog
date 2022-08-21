@@ -41,7 +41,13 @@ export function Home() {
       <FormContainer>
         <div>
           <strong>Publicações</strong>
-          <span>6 publicações</span>
+          <span>
+            {posts.length === 0
+              ? "Nenhuma publicação"
+              : posts.length > 1
+              ? `${posts.length} publicações`
+              : "1 publicação"}
+          </span>
         </div>
 
         <InputContainer>
