@@ -36,13 +36,18 @@ export const PostCardContainer = styled.div`
       line-height: 2.24rem;
     }
   }
+`;
 
-  p {
-    display: -webkit-box;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    color: ${(p) => p.theme["base-text"]};
+export const ContentContainer = styled.div`
+  * {
+    font-size: 1.6rem;
+    font-weight: 400;
   }
+
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  color: ${(p) => p.theme["base-text"]};
 `;

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { PostCardContainer } from "./styles";
+import ReactMarkdown from "react-markdown";
+import { ContentContainer, PostCardContainer } from "./styles";
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 interface PostCardProps {
   title: string;
@@ -9,21 +12,21 @@ interface PostCardProps {
 }
 
 export function PostCard({ title, number, updated_at, body }: PostCardProps) {
+  const updatedAtFormatted = formatDistanceToNow(new Date(updated_at), {
+    locale: ptBR,
+    addSuffix: true,
+  });
   return (
-    <Link to="/post" style={{ textDecoration: "none" }}>
+    <Link to={`/post/${number}`} style={{ textDecoration: "none" }}>
       <PostCardContainer>
         <header>
           <h1>{title}</h1>
-          <span>Há 1 dia</span>
+          <span>{updatedAtFormatted}</span>
         </header>
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in. Programming languages
-          all have built-in data structures, but these often differ from one
-          language to another. This article attempts to list the built-in data
-          structures available in
-        </p>
+
+        <ContentContainer>
+          <ReactMarkdown children={body} />
+        </ContentContainer>
       </PostCardContainer>
     </Link>
   );
